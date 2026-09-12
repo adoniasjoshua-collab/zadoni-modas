@@ -46,8 +46,6 @@ def import_catalog():
             'modeloUnico':slug,'identificacao':'Agrupamento visual; SKU comercial a confirmar',
         }
         products.append(product)
-    # O antigo exemplo ilustrado de saia permanece apenas para preservar sua URL.
-    products.extend(p for p in old if p['slug']=='saia-midi-olivia')
     (ROOT/'assets/data/produtos.js').write_text('/* Modelos agrupados por corte. Fotos fornecidas; nomes e tamanhos DEMO. Valores não informados ficam nulos. */\nwindow.ZADONI_PRODUCTS = '+json.dumps(products,ensure_ascii=False,indent=2)+';\n',encoding='utf-8')
     print(f'{len(groups)} modelos, {len(sources)} fotos associadas uma vez, originais preservados.')
 

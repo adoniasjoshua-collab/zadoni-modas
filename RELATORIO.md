@@ -1,14 +1,14 @@
-# ZAMORE · Moda Feminina — fase inicial enxuta
+# ZAMORE · Moda Feminina — vitrine completa
 
-A loja foi simplificada para começar com poucas peças e uma navegação curta. Não houve publicação, commit ou push. Nenhum outro projeto foi alterado.
+A loja mantém uma navegação curta e agora apresenta todos os produtos precificados. Nenhum outro projeto foi alterado.
 
 ## Estrutura em uso
 
 - Menu: **Coleção · Como comprar · Atendimento**, sem submenus.
 - Home: banner com uma foto, coleção única, três passos de compra e ajuda no rodapé.
-- Quatro peças com fotos: Vestido Midi Aurora, Vestido Longo Serena, Conjunto Essência e Vestido Midi Florença.
-- Dois filtros: tipo e tamanho. A busca considera somente essas peças.
-- Cards com uma ação principal para **Falar no WhatsApp**. O valor não é exibido; tamanho e cor são escolhidos nos detalhes antes da consulta.
+- 17 produtos precificados na vitrine; o placeholder Saia Midi Olívia foi removido.
+- Dois filtros: tipo e tamanho. A busca considera todos os produtos precificados.
+- Cards com preço visível e ação principal para **Falar no WhatsApp**. Tamanho e cor são escolhidos nos detalhes antes da consulta.
 - Até duas sugestões de outras peças da seleção.
 - Número oficial de WhatsApp pendente; sem ele, um diálogo informa que o atendimento está em preparação.
 

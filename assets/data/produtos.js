@@ -5,8 +5,8 @@ window.ZADONI_PRODUCTS = [
     "nome": "Vestido Longo Serena",
     "slug": "vestido-longo-serena",
     "categoria": "vestidos",
-    "preco": 329.9,
-    "promocional": 289.9,
+    "preco": 160,
+    "promocional": null,
     "cores": [
       "Oliva",
       "Preto",
@@ -55,7 +55,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Vestido Midi Aurora",
     "slug": "vestido-midi-aurora",
     "categoria": "vestidos",
-    "preco": 249.9,
+    "preco": 99,
     "promocional": null,
     "cores": [
       "Preto floral"
@@ -90,7 +90,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Vestido Midi Florença",
     "slug": "vestido-midi-florenca",
     "categoria": "vestidos",
-    "preco": 279.9,
+    "preco": 115,
     "promocional": null,
     "cores": [
       "Vermelho floral",
@@ -141,7 +141,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Conjunto Essência",
     "slug": "conjunto-essencia",
     "categoria": "conjuntos-femininos",
-    "preco": 299.9,
+    "preco": 165,
     "promocional": null,
     "cores": [
       "Areia",
@@ -186,7 +186,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Conjunto Top Assimétrico e Calça",
     "slug": "conjunto-top-assimetrico-calca",
     "categoria": "conjuntos-femininos",
-    "preco": null,
+    "preco": 150,
     "promocional": null,
     "cores": [
       "Rosa"
@@ -219,7 +219,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Macacão com Faixa na Cintura",
     "slug": "macacao-faixa-cintura",
     "categoria": "macacoes",
-    "preco": null,
+    "preco": 175,
     "promocional": null,
     "cores": [
       "Preto",
@@ -259,7 +259,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Conjunto Colete Abotoado e Calça",
     "slug": "conjunto-colete-abotoado-calca",
     "categoria": "conjuntos-femininos",
-    "preco": null,
+    "preco": 165,
     "promocional": null,
     "cores": [
       "Azul-marinho",
@@ -301,7 +301,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Vestido Longo Estampado",
     "slug": "vestido-longo-estampado",
     "categoria": "vestidos",
-    "preco": null,
+    "preco": 135,
     "promocional": null,
     "cores": [
       "Verde estampado",
@@ -352,7 +352,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Conjunto Colete e Shorts",
     "slug": "conjunto-colete-shorts",
     "categoria": "conjuntos-femininos",
-    "preco": null,
+    "preco": 145,
     "promocional": null,
     "cores": [
       "Amarelo",
@@ -391,7 +391,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Conjunto Bustiê e Shorts",
     "slug": "conjunto-bustie-shorts",
     "categoria": "conjuntos-femininos",
-    "preco": null,
+    "preco": 135,
     "promocional": null,
     "cores": [
       "Preto",
@@ -433,7 +433,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Vestido Chemise com Mangas",
     "slug": "vestido-chemise-mangas",
     "categoria": "vestidos",
-    "preco": null,
+    "preco": 145,
     "promocional": null,
     "cores": [
       "Cinza"
@@ -468,7 +468,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Vestido Curto de Alças",
     "slug": "vestido-curto-alcas",
     "categoria": "vestidos",
-    "preco": null,
+    "preco": 125,
     "promocional": null,
     "cores": [
       "Vinho"
@@ -503,7 +503,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Vestido Chemise sem Mangas",
     "slug": "vestido-chemise-sem-mangas",
     "categoria": "vestidos",
-    "preco": null,
+    "preco": 150,
     "promocional": null,
     "cores": [
       "Preto",
@@ -577,7 +577,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Regata Básica",
     "slug": "regata-basica",
     "categoria": "blusas",
-    "preco": null,
+    "preco": 30,
     "promocional": null,
     "cores": [
       "Preto",
@@ -618,7 +618,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Macaquinho Poá",
     "slug": "macaquinho-poa",
     "categoria": "macacoes",
-    "preco": null,
+    "preco": 135,
     "promocional": null,
     "cores": [
       "Rosa poá",
@@ -654,7 +654,7 @@ window.ZADONI_PRODUCTS = [
     "nome": "Macacão com Botões Frontais",
     "slug": "macacao-botoes-frontais",
     "categoria": "macacoes",
-    "preco": null,
+    "preco": 175,
     "promocional": null,
     "cores": [
       "Azul-royal"
@@ -682,35 +682,4 @@ window.ZADONI_PRODUCTS = [
     "modeloUnico": "macacao-botoes-frontais",
     "identificacao": "Agrupamento visual; SKU comercial a confirmar"
   },
-  {
-    "id": 4,
-    "nome": "Saia Midi Olívia",
-    "slug": "saia-midi-olivia",
-    "categoria": "saias",
-    "preco": 179.9,
-    "promocional": 149.9,
-    "cores": [
-      "Oliva"
-    ],
-    "tamanhos": [
-      "P",
-      "M",
-      "G"
-    ],
-    "tecido": "Crepe (DEMO)",
-    "modelagem": "Midi evasê",
-    "disponivel": true,
-    "destaque": false,
-    "tags": [
-      "moda-modesta",
-      "moda-evangelica",
-      "ofertas"
-    ],
-    "descricao": "Uma saia versátil de cintura alta, com movimento e acabamento delicado.",
-    "imagem": "olivia.svg",
-    "fotoFornecida": false,
-    "imagens": [
-      "olivia.svg"
-    ]
-  }
 ];

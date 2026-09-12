@@ -9,7 +9,7 @@ def catalog(products, base='./', heading=True):
     size_options = ''.join(f'<option>{size}</option>' for size in sizes)
     title = '<div class="section-heading"><div><span class="eyebrow">ESCOLHA O SEU ESTILO</span><h2>Todos os modelos</h2></div></div>' if heading else ''
     return f'''<section id="colecao" class="container section launch-catalog" aria-label="Coleção inicial" data-category="all">
-    {title}<p class="collection-note">Um card por modelo. Veja as cores e estampas nos detalhes.<br>Fotos fornecidas · Fale com a ZAMORE no WhatsApp para consultar valor e disponibilidade.</p>
+    {title}<p class="collection-note">Todos os produtos precificados estão nesta vitrine. Veja as cores e estampas nos detalhes e fale com a ZAMORE pelo WhatsApp.</p>
     <form id="filters" class="simple-filters" aria-label="Encontrar uma peça">
       <label>Tipo de peça<select name="categoria"><option value="">Todas as peças</option>{options}</select></label>
       <label>Tamanho<select name="tamanho"><option value="">Todos os tamanhos</option>{size_options}</select></label>

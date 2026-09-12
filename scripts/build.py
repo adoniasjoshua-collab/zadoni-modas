@@ -37,7 +37,7 @@ def art(name,color,kind='dress'):
  else:
   shape='<path d="M240 165 L185 195 140 325 200 350 228 280 238 355 155 '+('700' if name=='serena' else '640')+' Q300 690 445 '+('700' if name=='serena' else '640')+' L362 355 372 280 400 350 460 325 415 195 360 165 Q300 222 240 165Z" fill="'+color+'"/><path d="M238 355 Q300 365 362 355" fill="none" stroke="#000" stroke-opacity=".2" stroke-width="7"/><path d="M260 380L225 620M300 390V635M340 380L380 625" stroke="#fff" stroke-opacity=".18" stroke-width="4" fill="none"/>'
  return f'<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800"><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#efede5"/><stop offset="1" stop-color="#dadccf"/></linearGradient><filter id="shadow"><feDropShadow dx="5" dy="12" stdDeviation="12" flood-opacity=".1"/></filter></defs><path fill="url(#bg)" d="M0 0H600V800H0z"/><path d="M65 800V280a235 235 0 0 1 470 0V800" fill="#f8f5ed" opacity=".65"/><ellipse cx="300" cy="730" rx="180" ry="18" fill="#344b3e" opacity=".08"/><path d="M300 115v25m-80 35 80-35 80 35" fill="none" stroke="#aa9372" stroke-width="5" stroke-linecap="round"/><g filter="url(#shadow)">{shape}</g><text x="300" y="774" text-anchor="middle" font-family="Arial" font-size="10" letter-spacing="3" fill="#64685f">ZAMORE · ILUSTRAÇÃO DEMO</text></svg>'
-for name,color,kind in [('aurora','#687961','dress'),('serena','#ad715c','dress'),('essencia','#c2ad87','set'),('olivia','#65715e','skirt'),('brisa','#ece4d2','blouse'),('florenca','#805457','dress')]:
+for name,color,kind in [('aurora','#687961','dress'),('serena','#ad715c','dress'),('essencia','#c2ad87','set'),('brisa','#ece4d2','blouse'),('florenca','#805457','dress')]:
  write('assets/img/'+name+'.svg',art(name,color,kind))
 write('assets/icons/favicon.svg','<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#344b3e"/><text x="32" y="47" text-anchor="middle" font-family="Georgia" font-size="46" fill="#f6f3ec">Z</text></svg>')
 def image(base,name,alt,extra=''):
@@ -74,7 +74,7 @@ def grid(tag,limit=4):
  if tag=='all':limit=len(active_products)
  return f'<div class="grid" data-product-grid="{tag}" data-limit="{limit}"></div>'
 by_slug={p['slug']:p for p in products}
-selected=config['COLLECTION_SLUGS'] if config['COLLECTION_SLUGS'] is not None else [p['slug'] for p in products if p.get('modeloUnico')]
+selected=config['COLLECTION_SLUGS'] if config['COLLECTION_SLUGS'] is not None else [p['slug'] for p in products if p.get('preco') is not None or p.get('promocional') is not None]
 assert selected and len(selected)==len(set(selected)), 'A seleção inicial precisa de slugs únicos e pelo menos uma peça.'
 assert all(slug in by_slug for slug in selected), 'Há um slug da seleção inicial ausente em produtos.js.'
 active_products=[by_slug[slug] for slug in selected]

@@ -2,7 +2,7 @@
 window.ZADONI_CONFIG = {
  WHATSAPP_NUMBER: '5594991429329',
  SITE_URL: '',
- // null: exibir todos os modelos únicos associados às fotos reais.
+ // null: exibir todos os produtos com preço cadastrado.
  // Uma lista de slugs pode ser usada futuramente para uma seleção específica.
  COLLECTION_SLUGS: null
 };

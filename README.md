@@ -2,9 +2,9 @@
 
 Loja estática de moda feminina elegante, moderna e modesta, com foco em vestidos e uma seleção de moda evangélica. Criada para o mercado inicial de Canaã dos Carajás – PA e preparada para migração de hospedagem.
 
-**Fase inicial enxuta:** quatro peças na vitrine (três vestidos e um conjunto), uma coleção e menu com Coleção, Como comprar e Atendimento. O fluxo principal é **escolher peça → conferir tamanho/cor → consultar no WhatsApp**. A home reúne banner, uma vitrine, três passos de compra e rodapé de ajuda.
+**Vitrine completa:** todos os 17 produtos precificados aparecem na coleção, com uma coleção e menu com Coleção, Como comprar e Atendimento. O fluxo principal é **escolher peça → conferir preço, tamanho e cor → consultar no WhatsApp**. A home reúne banner, uma vitrine, três passos de compra e rodapé de ajuda.
 
-**Ambiente DEMO:** nomes, tamanhos e disponibilidade são ilustrativos; os valores não são exibidos e devem ser consultados pelo WhatsApp. Não há vendas, checkout, estoque real, pagamentos ou backend. As quatro peças iniciais usam fotos fornecidas pelo usuário. Os seis registros originais continuam na fonte de dados, mas apenas os slugs selecionados em `assets/js/config.js` aparecem na vitrine, na busca e nas sugestões. Os arquivos de fotos originais foram preservados.
+**Ambiente DEMO:** nomes, preços, tamanhos e disponibilidade são ilustrativos. Não há vendas, checkout, estoque real, pagamentos ou backend. Todos os produtos com preço cadastrado aparecem na vitrine, na busca e nas sugestões. Os arquivos de fotos originais foram preservados.
 
 ## Abrir localmente
 
@@ -61,7 +61,7 @@ Adicione as fotos autorizadas em `assets/img`, preferencialmente WebP ou AVIF co
 
 Em `assets/js/config.js`, preencha `WHATSAPP_NUMBER` com código do país, DDD e número, somente dígitos. Nenhum número foi presumido.
 
-O número vazio ou inválido abre um diálogo informativo, sem redirecionar para terceiros. Com número configurado, `window.Zadoni.whatsappURL(produto, selecao)` monta um link `wa.me` com nome, URL e, na página de produto, tamanho e cor selecionados para consulta de valor e disponibilidade. Os cards oferecem contato direto; imagem e nome continuam levando aos detalhes. A função também atende cabeçalho, rodapé e botão flutuante. O site não envia mensagens automaticamente.
+O número vazio ou inválido abre um diálogo informativo, sem redirecionar para terceiros. Com número configurado, `window.Zadoni.whatsappURL(produto, selecao)` monta um link `wa.me` com nome, preço, URL e, na página de produto, tamanho e cor selecionados para confirmação de disponibilidade. Os cards oferecem contato direto; imagem e nome continuam levando aos detalhes. A função também atende cabeçalho, rodapé e botão flutuante. O site não envia mensagens automaticamente.
 
 ## Busca e filtros
 
