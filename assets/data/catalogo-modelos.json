@@ -1,0 +1,499 @@
+[
+  {
+    "id": 2,
+    "slug": "vestido-longo-serena",
+    "nome": "Vestido Longo Serena",
+    "categoria": "vestidos",
+    "modelagem": "Vestido longo com mangas, botões frontais e cinto",
+    "descricao": "Vestido longo com mangas, botões frontais e cinto. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [
+      "vestidos-longos",
+      "vestidos-elegantes",
+      "vestidos-evangelicos",
+      "moda-modesta",
+      "moda-evangelica"
+    ],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.57 (5).jpeg",
+        "cores": [
+          "Oliva"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.56 (1).jpeg",
+        "cores": [
+          "Preto"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.57 (2).jpeg",
+        "cores": [
+          "Marrom"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.57 (3).jpeg",
+        "cores": [
+          "Vinho"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.57 (4).jpeg",
+        "cores": [
+          "Azul-marinho"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "slug": "vestido-midi-aurora",
+    "nome": "Vestido Midi Aurora",
+    "categoria": "vestidos",
+    "modelagem": "Vestido midi floral com mangas curtas e fenda",
+    "descricao": "Vestido midi floral com mangas curtas e fenda. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [
+      "vestidos-midi",
+      "vestidos-elegantes"
+    ],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.02.jpeg",
+        "cores": [
+          "Preto floral"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "vestido-midi-florenca",
+    "nome": "Vestido Midi Florença",
+    "categoria": "vestidos",
+    "modelagem": "Vestido midi floral de alças com fenda",
+    "descricao": "Vestido midi floral de alças com fenda. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [
+      "vestidos-midi",
+      "vestidos-elegantes",
+      "vestidos-para-festa"
+    ],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.02 (5).jpeg",
+        "cores": [
+          "Vermelho floral"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.02 (1).jpeg",
+        "cores": [
+          "Preto floral"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.02 (2).jpeg",
+        "cores": [
+          "Azul-claro floral"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.02 (3).jpeg",
+        "cores": [
+          "Laranja floral"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.02 (4).jpeg",
+        "cores": [
+          "Branco floral"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.03 (1).jpeg",
+        "cores": [
+          "Rosa floral"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "conjunto-essencia",
+    "nome": "Conjunto Essência",
+    "categoria": "conjuntos-femininos",
+    "modelagem": "Conjunto de colete transpassado com lapela e calça ampla",
+    "descricao": "Conjunto de colete transpassado com lapela e calça ampla. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.00 (2).jpeg",
+        "cores": [
+          "Areia"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.00 (1).jpeg",
+        "cores": [
+          "Rosa"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.00 (3).jpeg",
+        "cores": [
+          "Verde"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.00 (4).jpeg",
+        "cores": [
+          "Fúcsia"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.00.jpeg",
+        "cores": [
+          "Amarelo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "conjunto-top-assimetrico-calca",
+    "nome": "Conjunto Top Assimétrico e Calça",
+    "categoria": "conjuntos-femininos",
+    "modelagem": "Conjunto de top de alças com sobreposição assimétrica e calça ampla",
+    "descricao": "Conjunto de top de alças com sobreposição assimétrica e calça ampla. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.55 (2).jpeg",
+        "cores": [
+          "Rosa"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "macacao-faixa-cintura",
+    "nome": "Macacão com Faixa na Cintura",
+    "categoria": "macacoes",
+    "modelagem": "Macacão sem mangas com decote redondo e faixa na cintura",
+    "descricao": "Macacão sem mangas com decote redondo e faixa na cintura. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.56 (2).jpeg",
+        "cores": [
+          "Preto",
+          "Azul-marinho"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.56 (3).jpeg",
+        "cores": [
+          "Vinho",
+          "Amarelo"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "conjunto-colete-abotoado-calca",
+    "nome": "Conjunto Colete Abotoado e Calça",
+    "categoria": "conjuntos-femininos",
+    "modelagem": "Conjunto de colete curto sem lapela com botões e calça ampla",
+    "descricao": "Conjunto de colete curto sem lapela com botões e calça ampla. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.56 (4).jpeg",
+        "cores": [
+          "Azul-marinho"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.56 (5).jpeg",
+        "cores": [
+          "Chumbo"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.57 (1).jpeg",
+        "cores": [
+          "Rosé"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.57.jpeg",
+        "cores": [
+          "Marrom"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "vestido-longo-estampado",
+    "nome": "Vestido Longo Estampado",
+    "categoria": "vestidos",
+    "modelagem": "Vestido longo estampado sem mangas com decote V",
+    "descricao": "Vestido longo estampado sem mangas com decote V. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [
+      "vestidos-longos",
+      "vestidos-elegantes"
+    ],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.58 (3).jpeg",
+        "cores": [
+          "Verde estampado"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.57 (6).jpeg",
+        "cores": [
+          "Multicolorido"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.58 (1).jpeg",
+        "cores": [
+          "Rosa estampado"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.58 (2).jpeg",
+        "cores": [
+          "Marrom estampado"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.58 (4).jpeg",
+        "cores": [
+          "Preto estampado"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.58.jpeg",
+        "cores": [
+          "Oliva estampado"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "conjunto-colete-shorts",
+    "nome": "Conjunto Colete e Shorts",
+    "categoria": "conjuntos-femininos",
+    "modelagem": "Conjunto de colete com lapela e shorts",
+    "descricao": "Conjunto de colete com lapela e shorts. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.58 (5).jpeg",
+        "cores": [
+          "Amarelo"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.59 (1).jpeg",
+        "cores": [
+          "Rosa"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.59.jpeg",
+        "cores": [
+          "Preto"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "conjunto-bustie-shorts",
+    "nome": "Conjunto Bustiê e Shorts",
+    "categoria": "conjuntos-femininos",
+    "modelagem": "Conjunto de bustiê sem alças com botões e shorts",
+    "descricao": "Conjunto de bustiê sem alças com botões e shorts. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.59 (2).jpeg",
+        "cores": [
+          "Preto"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.59 (3).jpeg",
+        "cores": [
+          "Oliva"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.59 (4).jpeg",
+        "cores": [
+          "Amarelo-lima"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.59 (6).jpeg",
+        "cores": [
+          "Azul-royal"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "vestido-chemise-mangas",
+    "nome": "Vestido Chemise com Mangas",
+    "categoria": "vestidos",
+    "modelagem": "Vestido curto com gola, mangas e cintura marcada",
+    "descricao": "Vestido curto com gola, mangas e cintura marcada. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [
+      "vestidos-elegantes"
+    ],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.59 (5).jpeg",
+        "cores": [
+          "Cinza"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "vestido-curto-alcas",
+    "nome": "Vestido Curto de Alças",
+    "categoria": "vestidos",
+    "modelagem": "Vestido curto ajustado de alças com detalhe na cintura",
+    "descricao": "Vestido curto ajustado de alças com detalhe na cintura. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [
+      "vestidos-para-festa"
+    ],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.00 (5).jpeg",
+        "cores": [
+          "Vinho"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "vestido-chemise-sem-mangas",
+    "nome": "Vestido Chemise sem Mangas",
+    "categoria": "vestidos",
+    "modelagem": "Vestido curto sem mangas com gola, botões e costuras contrastantes",
+    "descricao": "Vestido curto sem mangas com gola, botões e costuras contrastantes. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [
+      "vestidos-elegantes"
+    ],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.01.jpeg",
+        "cores": [
+          "Preto"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.01 (1).jpeg",
+        "cores": [
+          "Roxo"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.01 (2).jpeg",
+        "cores": [
+          "Vinho"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "blusa-brisa",
+    "nome": "Blusa Brisa",
+    "categoria": "blusas",
+    "modelagem": "Blusa de manga curta com decote V",
+    "descricao": "Blusa de manga curta com decote V. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.14.56.jpeg",
+        "cores": [
+          "Azul-marinho"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "regata-basica",
+    "nome": "Regata Básica",
+    "categoria": "blusas",
+    "modelagem": "Regata básica de alças finas",
+    "descricao": "Regata básica de alças finas. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.01 (3).jpeg",
+        "cores": [
+          "Preto",
+          "Branco",
+          "Marrom",
+          "Bege",
+          "Azul-claro"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "macaquinho-poa",
+    "nome": "Macaquinho Poá",
+    "categoria": "macacoes",
+    "modelagem": "Macaquinho de alças com estampa de poá",
+    "descricao": "Macaquinho de alças com estampa de poá. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.01 (4).jpeg",
+        "cores": [
+          "Rosa poá"
+        ]
+      },
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.01 (5).jpeg",
+        "cores": [
+          "Branco poá"
+        ]
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "slug": "macacao-botoes-frontais",
+    "nome": "Macacão com Botões Frontais",
+    "categoria": "macacoes",
+    "modelagem": "Macacão de alças com decote reto, botões frontais e pernas amplas",
+    "descricao": "Macacão de alças com decote reto, botões frontais e pernas amplas. Confira as fotos e as variações deste modelo; composição, medidas e condições comerciais devem ser confirmadas.",
+    "tags": [],
+    "fotos": [
+      {
+        "arquivo": "WhatsApp Image 2026-09-12 at 11.15.01 (6).jpeg",
+        "cores": [
+          "Azul-royal"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,112 @@
+"""Gera HTML estático e ilustrações SVG originais. Sem dependências externas."""
+from pathlib import Path
+import json
+import html
+from launch_layout import home as launch_home, catalog as launch_catalog, footer as launch_footer
+ROOT = Path(__file__).resolve().parent.parent
+raw = (ROOT / 'assets/data/produtos.js').read_text(encoding='utf-8')
+# O catálogo é JavaScript para também funcionar sem fetch ao abrir index.html.
+import subprocess
+products = json.loads(subprocess.check_output(['node', '-e', "global.window={};require('./assets/data/produtos.js');process.stdout.write(JSON.stringify(window.ZADONI_PRODUCTS))"], cwd=ROOT, text=True, encoding='utf-8'))
+config = json.loads(subprocess.check_output(['node', '-e', "global.window={};require('./assets/js/config.js');process.stdout.write(JSON.stringify(window.ZADONI_CONFIG))"], cwd=ROOT, text=True, encoding='utf-8'))
+categories = {
+ 'vestidos':('Vestidos Femininos','Vestidos que acompanham o seu ritmo, do cotidiano aos dias especiais.'),
+ 'vestidos-midi':('Vestidos Midi Femininos','O comprimento versátil para expressar elegância em cada ocasião.'),
+ 'vestidos-longos':('Vestidos Longos','Movimento, leveza e presença em peças de comprimento longo.'),
+ 'vestidos-elegantes':('Vestidos Elegantes','Detalhes delicados e silhuetas que valorizam o seu estilo.'),
+ 'vestidos-para-festa':('Vestidos para Festa','Inspirações para celebrar com conforto e personalidade.'),
+ 'vestidos-evangelicos':('Vestidos Evangélicos','Comprimentos e modelagens para quem procura vestir-se com discrição e elegância.'),
+ 'conjuntos-femininos':('Conjuntos Femininos','Combinações práticas, pensadas para multiplicar as possibilidades do seu guarda-roupa.'),
+ 'saias':('Saias Femininas','Texturas e movimento para composições cheias de leveza.'),
+ 'blusas':('Blusas Femininas','Peças versáteis para complementar seus looks com delicadeza.'),
+ 'moda-modesta':('Moda Modesta','Estilo contemporâneo, comprimentos confortáveis e beleza nos detalhes.'),
+ 'moda-evangelica':('Moda Evangélica','Inspirações para a igreja e para a vida, com elegância e liberdade de escolha.'),
+ 'lancamentos':('Lançamentos','Conheça a seleção que apresenta a proposta da nossa próxima coleção.'),
+ 'mais-vendidos':('Mais Vendidos · seleção DEMO','Uma prévia da futura vitrine de favoritos. Não há vendas ou ranking real nesta demonstração.'),
+ 'ofertas':('Ofertas · seleção DEMO','Fale com a Zadoni no WhatsApp para consultar valores e disponibilidade.')
+}
+def write(path, text):
+ p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text,encoding='utf-8')
+def art(name,color,kind='dress'):
+ if kind=='blouse':
+  shape='<path d="M220 190 L160 215 110 340 175 365 205 300 190 465 Q300 490 410 465 L395 300 425 365 490 340 440 215 380 190 Q300 250 220 190Z" fill="'+color+'"/>'
+ elif kind=='skirt':
+  shape='<path d="M235 260 H365 L430 625 Q300 665 170 625Z" fill="'+color+'"/><path d="M235 260 H365 V285 H235Z" fill="#000" opacity=".13"/>'
+ elif kind=='set':
+  shape='<path d="M225 170 L175 195 130 345 190 360 215 290 215 400 H385 L385 290 410 360 470 345 425 195 375 170 300 205Z" fill="'+color+'"/><path d="M220 410 H380 L415 670 H315 L300 470 285 670 H185Z" fill="'+color+'"/><path d="M300 210V385" stroke="#000" opacity=".14" stroke-width="3"/>'
+ else:
+  shape='<path d="M240 165 L185 195 140 325 200 350 228 280 238 355 155 '+('700' if name=='serena' else '640')+' Q300 690 445 '+('700' if name=='serena' else '640')+' L362 355 372 280 400 350 460 325 415 195 360 165 Q300 222 240 165Z" fill="'+color+'"/><path d="M238 355 Q300 365 362 355" fill="none" stroke="#000" stroke-opacity=".2" stroke-width="7"/><path d="M260 380L225 620M300 390V635M340 380L380 625" stroke="#fff" stroke-opacity=".18" stroke-width="4" fill="none"/>'
+ return f'<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800"><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#efede5"/><stop offset="1" stop-color="#dadccf"/></linearGradient><filter id="shadow"><feDropShadow dx="5" dy="12" stdDeviation="12" flood-opacity=".1"/></filter></defs><path fill="url(#bg)" d="M0 0H600V800H0z"/><path d="M65 800V280a235 235 0 0 1 470 0V800" fill="#f8f5ed" opacity=".65"/><ellipse cx="300" cy="730" rx="180" ry="18" fill="#344b3e" opacity=".08"/><path d="M300 115v25m-80 35 80-35 80 35" fill="none" stroke="#aa9372" stroke-width="5" stroke-linecap="round"/><g filter="url(#shadow)">{shape}</g><text x="300" y="774" text-anchor="middle" font-family="Arial" font-size="10" letter-spacing="3" fill="#64685f">ZADONI · ILUSTRAÇÃO DEMO</text></svg>'
+for name,color,kind in [('aurora','#687961','dress'),('serena','#ad715c','dress'),('essencia','#c2ad87','set'),('olivia','#65715e','skirt'),('brisa','#ece4d2','blouse'),('florenca','#805457','dress')]:
+ write('assets/img/'+name+'.svg',art(name,color,kind))
+write('assets/icons/favicon.svg','<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#344b3e"/><text x="32" y="47" text-anchor="middle" font-family="Georgia" font-size="46" fill="#f6f3ec">Z</text></svg>')
+def image(base,name,alt,extra=''):
+ photos={'aurora':'aurora.jpg','serena':'serena.jpg','essencia':'essencia.jpg','brisa':'brisa.jpg','florenca':'florenca.jpg'}
+ filename=photos.get(name,name+'.svg')
+ if name in photos:alt=alt.replace('Ilustração DEMO:','Foto fornecida para a seleção DEMO:').replace('Ilustração DEMO de vestido longo terracota','Foto fornecida de vestido longo oliva')
+ return f'<img src="{base}assets/img/{filename}" alt="{alt}" width="600" height="800" loading="lazy" {extra}>'
+def shell(route,title,desc,body):
+ depth=len([s for s in route.split('/') if s]);base='../'*depth or './'
+ nav=[('colecao/','Coleção'),('#como-comprar','Como comprar'),('contato/','Atendimento')]
+ links=''.join(f'<a href="{base}{path}"'+(' aria-current="page"' if route+'/'==path else '')+f'>{label}</a>' for path,label in nav)
+ full=f'''<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{html.escape(title)} | Zadoni Modas</title><meta name="description" content="{html.escape(desc,quote=True)}">
+<meta name="robots" content="noindex,nofollow">
+<!-- Migração: configurar SITE_URL para canonical e og:url. Manter NOINDEX até autorização de lançamento. -->
+<meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:site_name" content="Zadoni Modas"><meta property="og:title" content="{html.escape(title,quote=True)} | Zadoni Modas"><meta property="og:description" content="{html.escape(desc,quote=True)}"><meta property="og:image" content="{base}assets/img/aurora.svg"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(title,quote=True)} | Zadoni Modas"><meta name="twitter:description" content="{html.escape(desc,quote=True)}"><meta name="theme-color" content="#344b3e">
+<link rel="icon" href="{base}assets/icons/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="{base}assets/css/style.css">
+<script src="{base}assets/js/config.js" defer></script><script src="{base}assets/data/produtos.js" defer></script><script src="{base}assets/js/app.js" defer></script></head>
+<body data-base="{base}" data-route="{route}"><a class="skip" href="#main">Pular para o conteúdo</a>
+<div class="announcement">ELEGÂNCIA EM CADA DETALHE · CANAÃ DOS CARAJÁS, PA · CATÁLOGO DEMO</div>
+<header><div class="container header-main"><a class="logo" href="{base}" aria-label="Zadoni Modas, início">ZADONI<small>MODAS</small></a><form class="search" role="search" action="{base}colecao/"><input name="q" type="search" aria-label="Buscar no catálogo" placeholder="Encontre seu próximo favorito"><button aria-label="Buscar" type="submit">⌕</button></form><div class="header-actions"><button class="button secondary" data-whatsapp>WhatsApp ↗</button><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navigation">☰</button></div></div><nav class="nav" aria-label="Navegação principal"><div id="navigation" class="container nav-inner">{links}</div></nav></header>
+<main id="main">{body}</main>
+
+{launch_footer(base)}
+<button class="floating" data-whatsapp aria-label="Atendimento pelo WhatsApp">WhatsApp ↗</button><dialog id="contact-dialog" aria-labelledby="dialog-title"><h2 id="dialog-title">Atendimento em preparação</h2><p>O WhatsApp da Zadoni Modas ainda não foi configurado. O catálogo é demonstrativo e não recebe pedidos nesta fase.</p><form method="dialog"><button class="button">Entendi</button></form></dialog><noscript><p class="container demo-note">Ative o JavaScript para visualizar os produtos, pesquisar e usar os filtros. As páginas institucionais continuam disponíveis.</p></noscript></body></html>'''
+ full=full.replace(f'content="{base}assets/img/aurora.svg"',f'content="{base}assets/img/serena.jpg"')
+ if config.get('SITE_URL'):
+  canonical=config['SITE_URL'].rstrip('/')+'/'+route+('/' if route else '')
+  full=full.replace('</head>',f'<link rel="canonical" href="{html.escape(canonical,quote=True)}"><meta property="og:url" content="{html.escape(canonical,quote=True)}"></head>')
+ write((route+'/' if route else '')+'index.html',full)
+def bread(base,title):return f'<nav class="breadcrumbs" aria-label="Você está aqui"><a href="{base}">Início</a> <span aria-hidden="true"> / </span><span aria-current="page">{title}</span></nav>'
+def grid(tag,limit=4):
+ if tag=='all':limit=len(active_products)
+ return f'<div class="grid" data-product-grid="{tag}" data-limit="{limit}"></div>'
+by_slug={p['slug']:p for p in products}
+selected=config['COLLECTION_SLUGS'] if config['COLLECTION_SLUGS'] is not None else [p['slug'] for p in products if p.get('modeloUnico')]
+assert selected and len(selected)==len(set(selected)), 'A seleção inicial precisa de slugs únicos e pelo menos uma peça.'
+assert all(slug in by_slug for slug in selected), 'Há um slug da seleção inicial ausente em produtos.js.'
+active_products=[by_slug[slug] for slug in selected]
+home=launch_home(active_products)
+shell('','Moda feminina elegante para todos os momentos','Conheça a primeira seleção de vestidos e conjuntos da Zadoni Modas. Escolha uma peça e consulte os detalhes.',home)
+shell('colecao','Nossa coleção','A primeira seleção da Zadoni Modas. Encontre sua peça por tipo ou tamanho.','<div class="container">'+bread('../','Coleção')+'<div class="page-intro"><h1>Nossa coleção</h1><p>Encontre seu próximo look e confira os detalhes da peça.</p></div></div>'+launch_catalog(active_products,'../',False))
+articles=[('como-escolher-vestido-midi','Como escolher seu vestido midi','Comprimento, proporção e liberdade para se movimentar.'),('moda-modesta-no-dia-a-dia','Moda modesta no dia a dia','Ideias simples para combinar conforto e personalidade.'),('um-conjunto-tres-ocasioes','Um conjunto, três ocasiões','Novas combinações com as peças que você já ama.')]
+filters='''<form id="filters" class="filters" aria-label="Filtros do catálogo"><label>Categoria<select name="categoria"><option value="">Todas</option><option value="vestidos">Vestidos</option><option value="conjuntos-femininos">Conjuntos</option><option value="saias">Saias</option><option value="blusas">Blusas</option></select></label><label>Tamanho<select name="tamanho"><option value="">Todos</option><option>P</option><option>M</option><option>G</option><option>GG</option></select></label><label>Cor<select name="cor"><option value="">Todas</option><option>Oliva</option><option>Terracota</option><option>Areia</option><option>Off-white</option><option>Vinho</option></select></label><label>Destaque<select name="destaque"><option value="">Todos</option><option value="sim">Em destaque</option></select></label><label>Disponibilidade DEMO<select name="disponivel"><option value="">Todas</option><option value="sim">Disponível</option><option value="nao">Indisponível</option></select></label><label>Buscar nesta seleção<input name="busca" type="search" placeholder="Nome ou descrição"></label><button type="reset" class="button secondary">Limpar filtros</button></form><div class="results-bar"><span id="result-count" role="status" aria-live="polite"></span></div><div class="grid" id="catalog-grid"></div>'''
+filters=filters.replace('<option>Terracota</option>','<option>Preto</option>').replace('<option>Off-white</option>','<option>Azul-marinho</option>').replace('<option>Vinho</option>','<option>Vermelho</option>')
+filters='<div class="catalog-layout"><aside class="catalog-sidebar"><details id="filter-panel" open><summary>Filtrar peças <span aria-hidden="true">＋</span></summary>'+filters.replace('</form><div class="results-bar">','</form></details></aside><div class="catalog-results"><div class="results-bar">')+'</div></div>'
+for slug,(title,desc) in categories.items():
+ body=f'<div class="container">{bread("../",title)}<div class="page-intro"><h1>{title}</h1><p>{desc}</p></div><p class="demo-note">Catálogo DEMO · Ilustrações, preços e disponibilidade são exemplos. Não há pedidos ou estoque real nesta fase.</p><section aria-label="Produtos" data-category="{slug}">{filters}</section><section class="content"><h2>Seu estilo em cada escolha</h2><p>{desc} Observe o tecido, a modelagem e as medidas da peça para encontrar a combinação que faz sentido para você.</p><h2>Continue explorando</h2><div class="buttons"><a class="button secondary" href="../vestidos-midi/">Vestidos midi</a><a class="button secondary" href="../conjuntos-femininos/">Conjuntos</a><a class="button secondary" href="../moda-modesta/">Moda modesta</a></div><h2>Dúvidas sobre as peças</h2><details><summary>Como escolher o tamanho?</summary><p>Compare suas medidas com as medidas reais de cada peça quando estiverem disponíveis. Consulte o <a href="../guia-de-tamanhos/">guia de tamanhos</a>.</p></details><details><summary>Posso comprar uma peça desta vitrine?</summary><p>Esta é uma demonstração. O atendimento e o catálogo real serão disponibilizados após a configuração da loja.</p></details></section></div>'
+ body=body.replace('Ilustrações, preços e disponibilidade são exemplos.','Fotos fornecidas e ilustrações de apoio. Nomes, preços e disponibilidade são exemplos.')
+ if slug.startswith('vestidos'):
+  shortcuts='<nav class="category-shortcuts" aria-label="Tipos de vestidos">'+''.join(f'<a href="../{target}/"'+(' aria-current="page"' if target==slug else '')+f'>{label}</a>' for target,label in [('vestidos','Todos'),('vestidos-midi','Midi'),('vestidos-longos','Longos'),('vestidos-elegantes','Elegantes'),('vestidos-para-festa','Festa'),('vestidos-evangelicos','Evangélicos')])+'</nav>'
+  body=body.replace('<p class="demo-note">',shortcuts+'<p class="demo-note">',1)
+ shell(slug,title,desc,body)
+info={
+ 'sobre':('Sobre a Zadoni Modas','Elegância, leveza e personalidade: conheça a proposta da Zadoni Modas.','<h2>Moda para acompanhar a vida</h2><p>A Zadoni Modas nasce com uma proposta simples: reunir moda feminina elegante para todos os momentos. Vestidos, conjuntos, saias e blusas compõem uma seleção pensada para diferentes estilos.</p><h2>Espaço para a sua essência</h2><p>A moda modesta e evangélica faz parte do nosso olhar, ao lado de composições contemporâneas para trabalho, encontros e celebrações. Cada mulher tem liberdade para construir o próprio estilo.</p><h2>De Canaã dos Carajás para novos caminhos</h2><p>O projeto começa com foco em Canaã dos Carajás, no Pará, e está sendo preparado para crescer. Esta primeira vitrine é demonstrativa.</p>'),
+ 'contato':('Fale com a Zadoni','Informações sobre o futuro atendimento da Zadoni Modas em Canaã dos Carajás.','<h2>Um atendimento próximo</h2><p>O canal de WhatsApp está em preparação. Assim que o contato oficial for cadastrado, você poderá consultar peças, tamanhos e condições diretamente com a equipe.</p><button class="button" data-whatsapp>Consultar atendimento ↗</button><h2>Onde estamos</h2><p>Mercado inicial: Canaã dos Carajás – PA. Endereço de atendimento e horários ainda não foram informados. Não há loja física ou entrega confirmada nesta demonstração.</p>'),
+ 'guia-de-tamanhos':('Guia de tamanhos','Saiba como tirar suas medidas antes de escolher uma peça.','<h2>Comece pelas suas medidas</h2><ol><li>Busto: passe a fita ao redor da parte mais ampla, sem apertar.</li><li>Cintura: meça a região natural da cintura, mantendo a fita confortável.</li><li>Quadril: meça a parte mais larga, com os pés juntos.</li><li>Comprimento: compare com uma peça sua de modelagem semelhante.</li></ol><h2>Cada modelagem tem seu caimento</h2><p>P, M, G e GG são identificações demonstrativas do catálogo. A tabela em centímetros será disponibilizada com os produtos reais. Não escolha apenas pela letra: confirme medidas, elasticidade e composição antes de comprar.</p>'),
+ 'trocas-e-devolucoes':('Trocas e devoluções','Status das informações de atendimento, trocas e devoluções da Zadoni Modas.','<h2>Informações em preparação</h2><p>Esta vitrine demonstrativa não realiza vendas, pagamentos ou pedidos. A política comercial de trocas e devoluções será publicada antes do início das vendas, com identificação da empresa, canais de atendimento e instruções aplicáveis.</p><h2>Antes da abertura da loja</h2><p>A equipe deverá informar condições de compra, entrega, devolução e reembolso. Esta página não constitui uma política comercial vigente.</p><a class="button secondary" href="../contato/">Consultar contato</a>'),
+ 'moda-feminina-canaa-dos-carajas':('Moda feminina em Canaã dos Carajás','Conheça a proposta da Zadoni Modas para moda feminina em Canaã dos Carajás, Pará.','<h2>Elegância perto de você</h2><p>A Zadoni Modas está sendo preparada para atender mulheres de Canaã dos Carajás, no Pará, com foco em vestidos, conjuntos e moda modesta.</p><h2>Uma seleção para diferentes momentos</h2><p>Explore inspirações para o trabalho, a igreja e ocasiões especiais. As opções de atendimento e a futura entrega local serão confirmadas no lançamento.</p><a class="button" href="../vestidos/">Explorar vestidos</a>')}
+for slug,(title,desc,content) in info.items():shell(slug,title,desc,f'<div class="container">{bread("../",title)}<article class="content"><h1>{title}</h1><p>{desc}</p>{content}</article></div>')
+shell('blog','Caderno Zadoni','Inspirações de moda, combinações e ideias para vestir com elegância.','<div class="container">'+bread('../','Caderno Zadoni')+'<div class="page-intro"><h1>Caderno Zadoni</h1><p>Pequenas ideias para um guarda-roupa com mais possibilidades.</p></div><div class="editorial section">'+''.join(f'<article><span class="eyebrow">INSPIRAÇÃO</span><h2><a href="./{slug}/">{title}</a></h2><p>{desc}</p><a href="./{slug}/">Ler artigo →</a></article>' for slug,title,desc in articles)+'</div></div>')
+texts=[['Observe o comprimento','O midi fica entre o joelho e o tornozelo. Experimente diferentes alturas de barra e observe como você se sente ao caminhar e sentar. A escolha deve acompanhar seu conforto.','Pense na ocasião','Sandálias discretas ajudam a compor um visual leve. Um sapato fechado e uma bolsa estruturada podem acompanhar o trabalho. Os acessórios mudam o tom sem exigir outra peça.'],['Escolha com liberdade','Mangas, decotes e comprimentos podem ser combinados de acordo com suas preferências. A moda modesta não exige uma única fórmula: encontre proporções nas quais você se sinta à vontade.','Crie combinações leves','Experimente uma saia midi com uma blusa de tecido suave. Tons próximos criam continuidade; uma cor diferente nos acessórios traz personalidade. Observe também a transparência e o caimento.'],['No trabalho','Use as peças coordenadas com um sapato confortável e acessórios discretos. Observe se a modelagem permite movimentar os braços e sentar com tranquilidade.','No fim de semana e nas celebrações','Combine a parte de cima com uma saia que você já tem para um passeio. Para um encontro especial, reúna o conjunto e acrescente um acessório marcante. Pequenas mudanças renovam a composição.']]
+for (slug,title,desc),txt in zip(articles,texts):shell('blog/'+slug,title,desc,'<div class="container">'+bread('../../',title)+f'<article class="content"><a class="text-link" href="../">← Caderno Zadoni</a><h1>{title}</h1><p>{desc}</p><h2>{txt[0]}</h2><p>{txt[1]}</p><h2>{txt[2]}</h2><p>{txt[3]}</p><a class="button secondary" href="../../vestidos/">Explorar a vitrine</a></article></div>')
+for p in products:
+ slug='produto/'+p['slug'];title=p['nome'];desc=p['descricao']
+ shell(slug,title,desc,f'<div class="container">{bread("../../",title)}<div id="product-detail" data-product="{p["slug"]}"><article class="content"><h1>{title}</h1><p>{desc}</p><p class="demo-note">Produto demonstrativo. Ative o JavaScript para consultar as opções da peça.</p></article></div><section class="section"><h2>Você também pode gostar</h2><div class="grid" data-related="{p["slug"]}"></div></section></div>')
+shell('produto','Explore nossos produtos','Escolha uma peça do catálogo demonstrativo para conhecer seus detalhes.','<div class="container">'+bread('../','Produtos')+'<div class="page-intro"><h1>Conheça cada detalhe</h1><p>Escolha uma peça para consultar cores, tamanhos e modelagem.</p></div><section class="section">'+grid('all',6)+'</section></div>')
+# A 404 publicada fica na raiz. Caminhos relativos não funcionam em URLs ausentes profundas.
+error='''<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Endereço não encontrado na Zadoni Modas."><title>Página não encontrada | Zadoni Modas</title><style>body{margin:0;background:#f6f3ec;color:#292e29;font-family:Arial,sans-serif;padding:10vh 8vw}h1{font:42px Georgia,serif;max-width:620px}p{line-height:1.8}a{display:inline-block;background:#344b3e;color:white;padding:16px 24px;margin-top:20px}a:focus-visible{outline:3px solid #aa622e;outline-offset:4px}</style></head><body><main><p>ZADONI MODAS</p><h1>Vamos encontrar outro caminho?</h1><p>Este endereço não existe. Volte ao início para explorar a coleção.</p><a id="home" href="/">Voltar ao início</a></main><script>if(location.hostname.endsWith('.github.io')){document.getElementById('home').href='/'+location.pathname.split('/').filter(Boolean)[0]+'/';}</script></body></html>'''
+write('404.html',error)
+print(f'Geradas {len(list(ROOT.rglob("*.html")))} páginas e 7 ilustrações/ícones SVG.')

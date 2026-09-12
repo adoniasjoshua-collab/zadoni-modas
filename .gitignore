@@ -1,0 +1,8 @@
+node_modules/
+__pycache__/
+.DS_Store
+test-results/
+.env
+desktop.ini
+# Originais preservados localmente; apenas as cópias selecionadas entram no site.
+assets/FOTOS CATALO ZADONI MODA/
