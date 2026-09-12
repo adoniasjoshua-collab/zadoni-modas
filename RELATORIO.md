@@ -1,4 +1,4 @@
-# Zadoni Modas — fase inicial enxuta
+# ZAMORE · Moda Feminina — fase inicial enxuta
 
 A loja foi simplificada para começar com poucas peças e uma navegação curta. Não houve publicação, commit ou push. Nenhum outro projeto foi alterado.
 

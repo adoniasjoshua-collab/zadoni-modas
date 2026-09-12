@@ -51,7 +51,7 @@
    document.querySelector('h1').textContent = 'Busca no catálogo';
    const intro = document.querySelector('.page-intro p');
    if(intro)intro.textContent = query ? `Resultados para “${query}” na seleção inicial.` : 'Explore as peças da seleção inicial.';
-   document.title = 'Busca no catálogo | Zadoni Modas';
+   document.title = 'Busca no catálogo | ZAMORE · Moda Feminina';
   }
   if(filterForm.elements.busca)filterForm.elements.busca.value = query;
   const sizeQuery = new URLSearchParams(location.search).get('tamanho');
@@ -79,8 +79,8 @@
   const p = allProducts.find(item => item.slug === detail.dataset.product);
   if(p) {
    const options = items => items.map(item=>`<option value="${escape(item)}">${escape(item)}</option>`).join('');
-  detail.innerHTML = `<article class="product-detail"><img src="${base}assets/img/${escape(p.imagem)}" alt="Ilustração DEMO: ${escape(p.nome)}" width="600" height="800" fetchpriority="high"><div><a class="eyebrow" href="${base}${p.categoria}/">${escape(p.categoria.replaceAll('-',' '))}</a><h1>${escape(p.nome)}</h1><p>${escape(p.descricao)}</p><p class="demo-note">Consulte valor, tamanhos e disponibilidade falando com a Zadoni Modas no WhatsApp.</p><div class="product-options"><label>Tamanho<select id="product-size">${options(p.tamanhos)}</select></label><label>Cor<select id="product-color">${options(p.cores)}</select></label></div><a class="text-link" href="${base}guia-de-tamanhos/">Como escolher meu tamanho ↗</a><div class="buttons"><button class="button" data-whatsapp="${escape(p.slug)}">Falar sobre esta peça no WhatsApp ↗</button></div><p class="card-meta">Disponibilidade a confirmar pelo WhatsApp</p><h2>Sobre a peça</h2><dl><dt>Tecido</dt><dd>${escape(p.tecido)}</dd><dt>Modelagem</dt><dd>${escape(p.modelagem)}</dd><dt>Cores</dt><dd>${escape(p.cores.join(', '))}</dd></dl><details><summary>Entrega e atendimento</summary><p>A entrega local está em planejamento. Condições e prazos serão informados no atendimento.</p></details><details><summary>Trocas e devoluções</summary><p>As condições serão publicadas antes da abertura das vendas. <a href="${base}trocas-e-devolucoes/">Consulte o status das informações.</a></p></details></div></article>`;
-  detail.querySelector('.product-detail .demo-note').textContent = 'Consulte valor, tamanhos e disponibilidade falando com a Zadoni Modas no WhatsApp.';
+   detail.innerHTML = `<article class="product-detail"><img src="${base}assets/img/${escape(p.imagem)}" alt="Ilustração DEMO: ${escape(p.nome)}" width="600" height="800" fetchpriority="high"><div><a class="eyebrow" href="${base}${p.categoria}/">${escape(p.categoria.replaceAll('-',' '))}</a><h1>${escape(p.nome)}</h1><p>${escape(p.descricao)}</p><p class="demo-note">Consulte valor, tamanhos e disponibilidade falando com a ZAMORE no WhatsApp.</p><div class="product-options"><label>Tamanho<select id="product-size">${options(p.tamanhos)}</select></label><label>Cor<select id="product-color">${options(p.cores)}</select></label></div><a class="text-link" href="${base}guia-de-tamanhos/">Como escolher meu tamanho ↗</a><div class="buttons"><button class="button" data-whatsapp="${escape(p.slug)}">Falar sobre esta peça no WhatsApp ↗</button></div><p class="card-meta">Disponibilidade a confirmar pelo WhatsApp</p><h2>Sobre a peça</h2><dl><dt>Tecido</dt><dd>${escape(p.tecido)}</dd><dt>Modelagem</dt><dd>${escape(p.modelagem)}</dd><dt>Cores</dt><dd>${escape(p.cores.join(', '))}</dd></dl><details><summary>Entrega e atendimento</summary><p>A entrega local está em planejamento. Condições e prazos serão informados no atendimento.</p></details><details><summary>Trocas e devoluções</summary><p>As condições serão publicadas antes da abertura das vendas. <a href="${base}trocas-e-devolucoes/">Consulte o status das informações.</a></p></details></div></article>`;
+   detail.querySelector('.product-detail .demo-note').textContent = 'Consulte valor, tamanhos e disponibilidade falando com a ZAMORE no WhatsApp.';
    detail.querySelector('.product-detail .card-meta').textContent=availability(p);
    detail.querySelector('.product-detail [data-whatsapp]').textContent='Consultar peça pelo WhatsApp ↗';
    const back = detail.querySelector('.eyebrow');back.href=`${base}colecao/`;back.textContent='← Voltar à coleção';
@@ -117,8 +117,8 @@
  function whatsappURL(p,selection={}) {
   const number = config.WHATSAPP_NUMBER;
   if(!/^\d{10,15}$/.test(number)) return null;
-  let message = 'Olá! Gostaria de conhecer a Zadoni Modas.';
-  if(p) message = `Olá! Tenho interesse no ${p.nome} da Zadoni Modas. Gostaria de consultar o valor e a disponibilidade.${selection.size ? ` Tamanho: ${selection.size}.` : ''}${selection.color ? ` Cor: ${selection.color}.` : ''} ${productURL(p)}`;
+   let message = 'Olá! Gostaria de conhecer a ZAMORE.';
+   if(p) message = `Olá! Tenho interesse no ${p.nome} da ZAMORE. Gostaria de consultar o valor e a disponibilidade.${selection.size ? ` Tamanho: ${selection.size}.` : ''}${selection.color ? ` Cor: ${selection.color}.` : ''} ${productURL(p)}`;
   return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
  }
  window.Zadoni = {whatsappURL};

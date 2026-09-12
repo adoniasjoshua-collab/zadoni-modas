@@ -1,6 +1,6 @@
-# Zadoni Modas
+# ZAMORE · Moda Feminina
 
-Loja estática de moda feminina, com foco em vestidos e uma seleção de moda modesta e evangélica. Criada para o mercado inicial de Canaã dos Carajás – PA e preparada para migração de hospedagem.
+Loja estática de moda feminina elegante, moderna e modesta, com foco em vestidos e uma seleção de moda evangélica. Criada para o mercado inicial de Canaã dos Carajás – PA e preparada para migração de hospedagem.
 
 **Fase inicial enxuta:** quatro peças na vitrine (três vestidos e um conjunto), uma coleção e menu com Coleção, Como comprar e Atendimento. O fluxo principal é **escolher peça → conferir tamanho/cor → consultar no WhatsApp**. A home reúne banner, uma vitrine, três passos de compra e rodapé de ajuda.
 
@@ -79,7 +79,7 @@ Layout adaptável, foco visível, link para pular ao conteúdo, campos rotulados
 
 O projeto ainda não tem repositório remoto configurado. Não houve commit, push ou publicação.
 
-1. Crie ou escolha um repositório exclusivo para **Zadoni Modas**. Não utilize Zadoni Presentes.
+1. Crie ou escolha um repositório exclusivo para **ZAMORE**. Não utilize Zadoni Presentes.
 2. Versione os arquivos e envie ao repositório após confirmar o destino e as credenciais. Não inclua arquivos `.env` ou dados privados.
 3. Em **Settings → Pages → Build and deployment**, selecione **Deploy from a branch**, a branch com os arquivos e a pasta **/(root)**.
 4. Mantenha `.nojekyll` e `index.html` na raiz da fonte de publicação.

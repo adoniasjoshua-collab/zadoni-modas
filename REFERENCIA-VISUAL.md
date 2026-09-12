@@ -2,7 +2,7 @@
 
 **Escopo atual:** a pedido do usuário, a apresentação foi reduzida para quatro peças, uma coleção, três links no menu e dois filtros. Os recursos descritos abaixo registram a revisão anterior; submenu, vitrines repetidas e blocos editoriais não fazem parte da home inicial atual.
 
-A Zadoni recebeu uma revisão de apresentação e navegação após a solicitação de usar a loja de inspiração.
+A ZAMORE recebeu uma revisão de apresentação e navegação após a solicitação de usar a loja de inspiração.
 
 ## O que foi possível consultar
 
@@ -15,10 +15,10 @@ Foi consultado o conteúdo indexado de páginas do próprio domínio:
 
 Não foram reutilizados código, fotografias, textos comerciais, nomes de coleção ou identidade da referência. Não foi feita uma comparação visual por capturas da loja, pois as capturas disponíveis mostraram apenas o bloqueio 403.
 
-## Aplicação na Zadoni
+## Aplicação na ZAMORE
 
 - Cabeçalho com marca centralizada no desktop e busca acessível.
-- Banner editorial próprio, com duas fotos fornecidas pelo usuário e a comunicação da Zadoni.
+- Banner editorial próprio, com duas fotos fornecidas pelo usuário e a comunicação da ZAMORE.
 - Menu de vestidos com atalhos para comprimentos e ocasiões, utilizável por teclado e no celular.
 - Categorias com fotos retangulares e vitrines com detalhes de cor, preço e tamanho.
 - Seleção por tamanho na home: navega para o catálogo já filtrado em P, M, G ou GG, conforme os dados DEMO existentes.
